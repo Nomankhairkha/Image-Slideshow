@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> slideshow </title>
+    <style>
+        * {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+body {
+    background-color: aqua;
+   width: 100%;
+   height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.box {
+   width:60%;
+   height: 70%;
+   box-shadow: 0 0 25px -3px rgba(0,0,0,0.4);
+}
+.box img{
+   width:100%;
+   height: 100%;
+}
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img id="image">
+    </div>
+    
+    <script>
+    var images = ['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg'];
+var i =0;
+function slideShow() {
+    document.getElementById("image").src=images[i];
+
+    if(i<images.length-1){
+        i++;
+    }
+    else {
+        i=0;
+    }
+    setTimeout("slideShow()" , 2000);
+}
+window.onload = slideShow;
+    </script>
+    
+</body>
+</html>
